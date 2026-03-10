@@ -173,8 +173,12 @@ document.addEventListener('DOMContentLoaded', function() {
     new Swiper('.testimonial-swiper', {
       loop: true,
       navigation: {
-        nextEl: '.swiper-arrow-prev',
-        prevEl: '.swiper-arrow-next',
+        nextEl: '.review-content .swiper-arrow-next',
+        prevEl: '.review-content .swiper-arrow-prev',
+      },
+      pagination: {
+        el: '.testimonial-swiper .swiper-pagination',
+        clickable: true,
       },
     });
   }

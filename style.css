@@ -664,14 +664,27 @@ h3.cart-title {
 
 @media only screen and (max-width: 767px) {
   #billboard .banner-content {
-      margin-top: 210px;
+      margin-top: 180px;
   }
   #billboard .image-holder {
-      margin-top: -390px;
+      margin-top: -340px;
       opacity: 0.3;
   }
   #billboard .swiper-arrow {
-      top: 400px;
+      top: auto;
+      bottom: 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #billboard .banner-content {
+      margin-top: 140px;
+  }
+  #billboard .image-holder {
+      margin-top: -260px;
+  }
+  #billboard .banner-content h1 {
+      font-size: 1.8rem;
+      padding-bottom: 1.5rem !important;
   }
 }
 
@@ -732,15 +745,42 @@ h3.cart-title {
 
 /* 5. Testimonial
 /*----------------------------------------------*/
+#testimonials {
+    background-color: var(--gray-color);
+}
+.review-item {
+    background-color: var(--white-color);
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    margin: 0 auto 1.5rem;
+}
 .review-item blockquote {
-    font-size: 2.5em;
-    font-weight: 300;
-    line-height: 1.2;
+    font-size: 1.05em;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--gray-color-800);
+    margin-bottom: 1.2rem;
+    border: none;
+    padding: 0;
+}
+.rating {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin-bottom: 0.75rem;
 }
 .rating svg.star {
-    width: 16px;
-    height: 16px;
-    fill: var(--primary-color);
+    width: 18px;
+    height: 18px;
+    fill: #f5a623;
+}
+.author-detail .name {
+    font-size: 0.85em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--gray-color-800);
 }
 #testimonials .swiper-arrow svg {
     width: 45px;
@@ -756,15 +796,69 @@ h3.cart-title {
     right: 0;
 }
 .review-content .quotation svg.quote {
-    color: var(--light-blue-color);
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+}
+.testimonial-swiper .swiper-pagination {
+    position: relative;
+    margin-top: 1.5rem;
 }
 
 @media only screen and (max-width: 767px) {
-  #testimonials blockquote {
-      font-size: 2em;
+  .review-item {
+      padding: 1.5rem 1.2rem;
+  }
+  .review-item blockquote {
+      font-size: 0.97em;
   }
   .review-content .swiper-arrow {
       bottom: -420px;
+  }
+}
+
+/* 5.5 CTA inline link
+/*----------------------------------------------*/
+a.cta {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+a.cta:hover {
+  color: var(--dark-color);
+}
+
+/* 5.6 Yearly Sale Section
+/*----------------------------------------------*/
+#yearly-sale .text-content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media only screen and (max-width: 991px) {
+  #yearly-sale .text-content {
+    margin-left: 0 !important;
+    offset: 0 !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #yearly-sale {
+    background-position: center !important;
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+  #yearly-sale .text-content {
+    margin-left: 0 !important;
+    padding-left: 1rem;
+  }
+  #yearly-sale h2.display-2 {
+    font-size: 2rem;
+    padding-bottom: 1.5rem !important;
   }
 }
 
@@ -1006,7 +1100,54 @@ figure.instagram-item img.insta-image {
     font-size: 1.2em;
 }
 
-/* 13. Sibgle Post Page
+/* 13. Trust Signals & Footer
+--------------------------------------------------------------*/
+#trust-signals {
+  flex-wrap: wrap;
+}
+#trust-signals .col-6 {
+  margin-bottom: 4px;
+}
+#footer-bottom .Shipping,
+#footer-bottom .payment-method {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+#footer-bottom .card-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+#footer-bottom .card-wrap img {
+  height: 24px;
+  width: auto;
+}
+#footer-bottom .copyright p {
+  font-size: 0.78em;
+  color: var(--gray-color-800);
+  line-height: 1.5;
+}
+@media only screen and (max-width: 767px) {
+  #footer-bottom .row > div {
+    margin-bottom: 12px;
+  }
+  #footer-bottom .Shipping,
+  #footer-bottom .payment-method {
+    justify-content: center;
+    text-align: center;
+  }
+  #footer-bottom .copyright {
+    text-align: center;
+  }
+  #trust-signals .col-6 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+/* 14. Single Post Page
 --------------------------------------------------------------*/
 #single-post-navigation .post-navigation span.page-nav-title {
     font-size: 1.5em;
