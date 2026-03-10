@@ -85,11 +85,33 @@ function initProductQty() {
   });
 }
 
+// GA4 — Tracking de clicks en WhatsApp
+function initWhatsAppTracking() {
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var label = el.closest('.product-card')
+        ? (el.closest('.card-detail')
+            ? (el.closest('.card-detail').querySelector('.card-title a, .card-title') || el).textContent.trim()
+            : 'Botón Comprar')
+        : el.textContent.trim() || 'WhatsApp';
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_whatsapp', {
+          event_category: 'CTA',
+          event_label: label.substring(0, 80),
+          value: 1
+        });
+      }
+    });
+  });
+}
+
 // Inicializar todo cuando el DOM este listo
 document.addEventListener('DOMContentLoaded', function() {
 
   searchPopup();
   initProductQty();
+  initWhatsAppTracking();
 
   // Swiper hero / billboard
   if (document.querySelector('.main-swiper')) {
